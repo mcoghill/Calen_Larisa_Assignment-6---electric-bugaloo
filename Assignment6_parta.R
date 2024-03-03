@@ -42,3 +42,9 @@ ggplot() +
   scale_fill_discrete(name = "Fire Cause") +
   theme_minimal()
 class(fire_summary2$FIRE_CAUSE)
+
+#austonmatthews is the NHLs best goal scorer
+#quinnhughes always looks sad
+#brady is a rat
+#the oilers are going to win the stanely cup
+#vegas will be out in the first round
