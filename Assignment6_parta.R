@@ -43,8 +43,8 @@ ggplot() +
   theme_minimal()
 class(fire_summary2$FIRE_CAUSE)
 
-#austonmatthews is the NHLs best goal scorer
-#quinnhughes always looks sad
-#brady is a rat
-#the oilers are going to win the stanely cup
-#vegas will be out in the first round
+#elias pettersson is a dreamboat
+#auston matthews has a 5 head
+#can u teach me how to dougie
+#plz plz plz plz plz plz 
+#line 5
