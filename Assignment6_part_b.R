@@ -11,6 +11,11 @@ ldb <- bcdc_query_geodata("1130248f-f1a3-4956-8b2e-38d29d3e4af7", crs = 3005) |>
   collect()
 bc_bec <- bec(force = TRUE)
 View(bc_bec)
+
+#########
+## 4/4 ##
+#########
+
 ldb_bec <- sf::st_intersection(bc_bec, ldb)
 mapview(bc_bec)
 mapview(ldb_bec)
@@ -20,6 +25,13 @@ ldb_bec <- ldb_bec %>%
     area_ha = FEATURE_AREA_SQM/10000
   )
 
+#########
+## 1/2 ##
+#########
+
+## use the st_area() function to calculate the area of each of the features - the
+## FEATURE_AREA_SQM column contains areas of the entire polygon extending beyond
+## what was clipped.
 
 #•	Create a bar plot where the “MAP_LABEL” column is along the X-axis, and the area is along the Y-axis. Display each bar using different colors.
 ggplot() +
@@ -27,6 +39,10 @@ ggplot() +
   labs(title = "Area of Ecological Zones in Lac du Bois Provincial Park", 
        x = "Ecological Zone", 
        y = "Area (ha)")
+
+#########
+## 5/5 ##
+#########
 
 #•	Extract the mean elevation of each of the features (you will need to pull in the DEM from the “cded_terra” function)
 ?cded_terra
@@ -37,6 +53,21 @@ ldb_bec <- terra::extract(
   st_as_sf()
 ldb_bec$elevation
 
+#########
+## 4/4 ##
+#########
+
 #•	Create a mapview of the BEC vector layer, coloring the polygons by their subzone label.
 ?mapview
 mapview(ldb_bec, zcol= "SUBZONE")
+
+#########
+## 2/2 ##
+#########
+
+
+## Total:
+
+###########
+## 16/17 ##
+###########

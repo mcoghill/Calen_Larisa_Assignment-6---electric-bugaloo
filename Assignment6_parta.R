@@ -21,15 +21,31 @@ firepoints <- bcdc_query_geodata(flayer$id, crs = 3005) %>%
   collect() %>% 
   st_intersection(st_geometry(ldb))
 
+#########
+## 4/4 ##
+#########
+
 fire_summary <- firepoints %>% 
   group_by(FIRE_YEAR) %>% 
   summarise(count = n()) 
+
+#########
+## 2/2 ##
+#########
 
 ldbfire_summary <- firepoints %>% 
   group_by(FIRE_CAUSE) %>% 
   summarise(count = n())
 
+#########
+## 2/2 ##
+#########
+
 mapview(firepoints, zcol = "FIRE_CAUSE")
+
+#########
+## 2/2 ##
+#########
 
 fire_summary2 <- firepoints %>% 
   group_by(FIRE_CAUSE, FIRE_YEAR) %>% 
@@ -43,6 +59,16 @@ ggplot() +
   theme_minimal()
 class(fire_summary2$FIRE_CAUSE)
 
+#########
+## 5/5 ##
+#########
+
+
+## Part 1 total:
+
+###########
+## 15/15 ##
+###########
 
 #austonmatthews is the NHLs best goal scorer
 #quinnhughes always looks sad
@@ -56,3 +82,9 @@ class(fire_summary2$FIRE_CAUSE)
 #plz plz plz plz plz plz 
 #line 5
 
+
+## Part 2 total:
+
+#########
+## 5/5 ##
+#########
